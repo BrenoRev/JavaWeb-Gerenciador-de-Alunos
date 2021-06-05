@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Project Academy</title>
+<meta name="Author" content="Breno Silva" />
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap"
+	rel="stylesheet">
+
+</head>
+<body>
+
+<!--  cabeçalho -->
+	<header th:fragment="cabecalho">
+		<nav class="navbar navbar-expand-lg navbar-dark"
+			style="background-color: #4527A0;">
+			<a class="navbar-brand" th:href="@{/}"> 
+			<img src="/img/logo_header-site.png" width="200px" />
+			</a>
+
+			<button class="navbar-toggler" type="button" data-ttogle="collapse"
+				data-target="#navMobile">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navMobile" class="navbar-collapse collapse justify-content-end">
+				<a class="btn-nav nav-item nav-link"> <i class="fas fa-home"> </i> Home </a> 
+				<a class="btn-nav nav-item nav-link" style="color: white;" th:href="@{inserirAlunos}"> <i class="fas fa-user-graduate"></i> Cadastrar Aluno</a>
+				<a class="btn-nav nav-item nav-link"> <i class="fas fa-search"> </i> Pesquisar Aluno</a> 
+				<a class="nav-item nav-link btn-danger"> <i class="fas fa-times"></i> Sair</a>
+			</div>
+		</nav>
+
+
+
+	</header>
+<!--  footer -->
+
+	<footer th:fragment="rodape">
+		<div class="rodape">
+			<span>Todos os direitos reservados - 2020 &copy; Breno Silva</span>
+		</div>
+	</footer>
+
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
