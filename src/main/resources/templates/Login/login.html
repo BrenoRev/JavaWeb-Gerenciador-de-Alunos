@@ -23,21 +23,27 @@
 	<h2>Admin Login</h2>
 	<p>Insira suas credenciais para efetuar o login no sistema.</p>	
 	</div>
-	<form method="post">
+	
+	<form method="post" action="/login" th:object="${usuario}">
+	<div class="alert alert-danger" role="alert" th:if="${msg}">
+	<strong th:text="${msg}"></strong>
+	</div>
+	
+	
 	<div class="form-group">
-	<input type="text" class="form-control" placeholder="Username">
+	<input type="text"  class="form-control" placeholder="Username">
 	 </div>
+	 <!--  th:field="*{user}" -->
 	
 	<div class="form-group">
 	<input type="password" class="form-control" placeholder="Password">
 	</div>
+	<!--  th:field="*{senha}" -->
 	
 	<div class="cadastro">
 	<a th:href="@{cadastro}"> Não tem cadastro? clique aqui.</a>
 	</div>
 	<button class="btn btn-primary">Login</button>
-,
-	 
 	</form>
 	</div>
 	</div>
