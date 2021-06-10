@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Project Academy - Alunos</title>
+<meta name="Author" content="Breno Silva" />
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap"
+	rel="stylesheet">
+
+</head>
+<body>
+
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	
+	<div class="container" style="margin-top: 50px;">
+	
+	<div class="container">
+	<h3>Alunos Encontrados na Pesquisa</h3>
+	<hr>
+	<table class="table table-bordered table-hover">
+	<thead>
+	<th scope="col">Nome</th>
+	<th scope="col">Curso</th>
+	<th scope="col">Matricula</th>
+	<th scope="col">Status</th>
+	<th scope="col">Turno</th>
+	<th scope="col">Ação</th>
+	
+	</thead>
+	<tbody>
+	<tr scope="row" th:each="alunos : ${ListaDeAlunos}">
+	
+	
+	<td th:text="${alunos.nome}"></td>
+	<td th:text="${alunos.curso}"></td>
+	<td th:text="${alunos.matricula}"></td>
+	<td th:text="${alunos.status}"></td>
+	<td th:text="${alunos.turno}"></td>
+	
+	<td>
+	<a class="btn btn-primary" th:href="@{alterar/{id}(id=${alunos.id})}" style="margin-top: 7px; height: 30px; width: 48%; padding-top: 0.1%">
+	
+	<i class="fas fa-edit"></i>  Editar</a>
+	
+	<a class="btn btn-danger" th:href="@{excluir/{id}(id=${alunos.id})}" style="margin-top: 7px; height: 30px; width: 48%; padding-top: 0.1%">
+	<i class="fas fa-times"></i>  Excluir</a>
+	
+	</td>
+	
+	</tr>
+	
+	</tbody>
+	</table>
+	</div>
+	
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

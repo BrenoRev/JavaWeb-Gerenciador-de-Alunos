@@ -1,5 +1,7 @@
 package br.com.academy.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.academy.dao.AlunoDao;
@@ -103,6 +106,34 @@ public class AlunoController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Aluno/alunos-trancados");
 		mv.addObject("alunosTrancados" , alunoRepositorio.findByStatusTrancados());
+		return mv;
+	}
+	
+	@PostMapping("pesquisar-aluno")
+	public ModelAndView pesquisarAluno(@RequestParam(required = false) String nome) {
+		ModelAndView mv = new ModelAndView();
+		List<Aluno> listaAlunos;
+		if(nome == null || nome.trim().isEmpty()) {
+			listaAlunos = alunoRepositorio.findAll();
+		}else {
+			listaAlunos = alunoRepositorio.findByNomeContainingIgnoreCase(nome);
+		}
+		mv.addObject("ListaDeAlunos", listaAlunos);
+		mv.setViewName("Aluno/pesquisa-resultado");
+		return mv;
+	}
+	
+	@PostMapping("aluno-filtrado")
+	public ModelAndView pesquisarAlunoFiltro(@RequestParam(required = false) String name) {
+		ModelAndView mv = new ModelAndView();
+		List<Aluno> listaAlunos;
+		if(name == null || name.trim().isEmpty()) {
+			listaAlunos = alunoRepositorio.findAll();
+		}else {
+			listaAlunos = alunoRepositorio.findByNomeContainingIgnoreCase(name);
+		}
+		mv.addObject("ListaDeAlunosFiltrados", listaAlunos);
+		mv.setViewName("Aluno/pesquisa-resultado-Filtrados");
 		return mv;
 	}
 }
