@@ -7,6 +7,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import br.com.academy.Enums.Curso;
 import br.com.academy.Enums.Status;
@@ -19,19 +22,28 @@ public class Aluno {
 	private Integer id;
 	
 	@Column(name ="nome")
+	// Verifica se o campo não está vázio ou nulo
+	@Size(min =5, max=35,message="O nome deve conter no mínimo 5 caracteres.")
+	@NotBlank(message = "O nome não pode ser vázio.")
 	private String nome;
 	
 	@Column(name="curso")
 	@Enumerated(EnumType.STRING)
+	@NotNull(message= "O campo curso não pode ser nulo.")
 	private Curso curso;
 	
 	@Column(name="matricula")
+	@NotNull(message = "Clique no botão 'Gerar'")
+	@Size(min=3, message="Clique no botão gerar matricula!")
 	private String matricula;
 	
 	@Column(name ="status")
 	@Enumerated(EnumType.STRING)
+	@NotNull(message = "O campo status não pode ser nulo.")
 	private Status status;
 	
+	@NotBlank(message = "O turno não pode ser vázio.")
+	@Size(min =4, message = "No mínimo 4 caracteres.")
 	private String turno;
 	
 	public Aluno(Integer id, String nome, Curso curso, String matricula, Status status) {

@@ -23,6 +23,9 @@
 		<form method="post" action="InsertAlunos" th:object="${aluno}">
 			<div class="row">
 				<div class="col-md-6 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nome')}">
+				<label class="validation-message" th:errors="*{nome}"></label>
+			</div>
 					<label>Nome do Aluno: </label> <input class="form-control"
 						placeholder="Ex: Breno Silva" th:field="*{nome}">
 				</div>
@@ -32,6 +35,9 @@
 
 			<div class="row">
 				<div class="col-md-6 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('curso')}">
+				<label class="validation-message" th:errors="*{curso}"></label>
+				</div>
 					<label>Selecione o curso: </label>
 					 <select class="form-control" th:field="*{curso}">
 						<option
@@ -45,6 +51,9 @@
 
 			<div class="row">
 				<div class="col-md-6 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('matricula')}">
+				<label class="validation-message" th:errors="*{matricula}"></label>
+				</div>
 					<label>Gerar Matricula: </label> 
 					<input readonly="readonly" class="form-control" id="matricula" th:field="*{matricula}">
 					<button type="button" onclick="GerarMatricula();"
@@ -56,6 +65,9 @@
 
 			<div class="row">
 				<div class="col-md-6 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('status')}">
+				<label class="validation-message" th:errors="*{status}"></label>
+				</div>
 					<label>Selecione o Status: </label>
 					 <select class="form-control" th:field="*{status}">
 						<option
@@ -70,6 +82,9 @@
 	
 	<div class="row">
 				<div class="col-md-6 form-group offset-md-3">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('turno')}">
+				<label class="validation-message" th:errors="*{turno}"></label>
+				</div>
 					<label>Turno: </label> 
 					<input class="form-control" placeholder="Ex: Tarde" th:field="*{turno}">
 				</div>
