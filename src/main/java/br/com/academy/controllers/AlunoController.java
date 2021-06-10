@@ -123,6 +123,20 @@ public class AlunoController {
 		return mv;
 	}
 	
+	@GetMapping("pesquisar-aluno-2")
+	public ModelAndView pesquisarAluno2(@RequestParam(required = false) String nome) {
+		ModelAndView mv = new ModelAndView();
+		List<Aluno> listaAlunos;
+		if(nome == null || nome.trim().isEmpty()) {
+			listaAlunos = alunoRepositorio.findAll();
+		}else {
+			listaAlunos = alunoRepositorio.findByNomeContainingIgnoreCase(nome);
+		}
+		mv.addObject("ListaDeAlunos", listaAlunos);
+		mv.setViewName("Aluno/pesquisa-teste");
+		return mv;
+	}
+	
 	@PostMapping("aluno-filtrado")
 	public ModelAndView pesquisarAlunoFiltro(@RequestParam(required = false) String nome) {
 		ModelAndView mv = new ModelAndView();

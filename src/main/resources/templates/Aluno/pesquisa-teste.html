@@ -21,7 +21,7 @@
 	<div class="container" style="margin-top: 50px;">
 	
 	<div class="container">
-	<h3>Alunos</h3>
+	<h3>Alunos Encontrados na Pesquisa</h3>
 	<hr>
 	<table class="table table-bordered table-hover">
 	<thead>
@@ -34,7 +34,7 @@
 	
 	</thead>
 	<tbody>
-	<tr scope="row" th:each="alunos : ${alunosList}">
+	<tr scope="row" th:each="alunos : ${ListaDeAlunos}">
 	
 	
 	<td th:text="${alunos.nome}"></td>

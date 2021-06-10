@@ -42,6 +42,13 @@ public class UsuarioController {
 		mv.addObject("aluno", new Aluno());
 		return mv;
 	}
+	@GetMapping("/indexlog")
+	public ModelAndView indexlog() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/home/log");
+		mv.addObject("aluno", new Aluno());
+		return mv;
+	}
 	
 	@GetMapping("/cadastro")
 	public ModelAndView cadastrar() {
@@ -66,13 +73,27 @@ public class UsuarioController {
 		if(br.hasErrors()) {
 			mv.setViewName("Login/login");
 		}
-		Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
-		if(userLogin == null) {
+		// Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
+		Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), usuario.getSenha());
+		/*if(userLogin == null) {
 			mv.addObject("msg", "Usuário não encontrado. Tente novamente!");
 		}else {
 			session.setAttribute("usuarioLogado", userLogin);
 			return index();
-		}
-		return mv;
+		}*/
+		mv.addObject("nome", usuario.getUser());
+		session.setAttribute("usuarioLogado", userLogin);
+		return indexlog();
 	}
+	
+	@PostMapping("/logout")
+	public ModelAndView logout(HttpSession session) {
+		session.invalidate();
+		return login();
+	}
+	/*
+	@PostMapping("/index")
+	public ModelAndView back() {
+		return index();
+	}*/
 }

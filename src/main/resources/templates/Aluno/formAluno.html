@@ -97,8 +97,34 @@
 </div>
 		</form>
 	</div>
+	<div class="modal fade" id="modalPesquisa">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Encontre um Aluno</h5>
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+				</div>
+				<form method="post" action="pesquisar-aluno" th:object="${aluno}">
+					<div class="modal-body">
+						<input class="form-control" type="text" placeholder="Digite o nome do aluno" th:field="*{nome}" >
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+						<button type="submit" class="btn btn-primary">Pesquisar</button>
+					</div>
+				</form>
+
+
+			</div>
+		</div>
+	</div>
+	
 	<script src="js/main.js"></script>
 	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	
+	
 </body>
 </html>

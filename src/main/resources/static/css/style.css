@@ -30,6 +30,6 @@ a.btn-nav:hover{color: #BA68C8;}
 /*Responsividade */
 @media screen and (max-width: 667px){
 	.wm{width: 100%;}
-	nav{height: 100%;}
+	.nav{height: 100%;}
 	.neo-container{margin-top: 120px;}
 }

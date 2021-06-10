@@ -16,6 +16,12 @@
 </head>
 <body>
 
+<div style="margin:0; text-align: center;" class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Seja Bem Vindo!</h4>
+  <p>Espero que utilize a nossa plataforma com seguranca e responsabilidade.</p>
+  <hr>
+  <p class="mb-0">Software criado para escolas.</p>
+</div>
 
 	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 
@@ -31,11 +37,11 @@
 			<div class="botoes">
 
 				<div class="wm">
-					<a type="submit" th:href="@{inserirAlunos}" class="btn">CADASTRAR ALUNO</a>
+					<button type="submit" th:href="@{inserirAlunos}" class="btn">CADASTRAR ALUNO</button>
 				</div>
 
 				<div class="wm">
-						<a type="submit" th:href="@{alunos-adicionados}" class="btn">ENCONTRAR ALUNO</a>
+					<h5 class="btn justify-content-center">ENCONTRAR ALUNO</h5>
 				</div>
 
 				<div class="clear"></div>

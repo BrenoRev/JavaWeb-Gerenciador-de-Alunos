@@ -20,7 +20,7 @@
 	<header th:fragment="cabecalho">
 		<nav class="navbar navbar-expand-lg navbar-dark"
 			style="background-color: #4527A0;">
-			<a class="navbar-brand" th:href="@{/index}"> 
+			<a class="navbar-brand" th:href="@{/}"> 
 			<img src="/img/logo_header-site.png" width="200px" />
 			</a>
 
@@ -30,11 +30,12 @@
 			</button>
 
 			<div id="navMobile" class="navbar-collapse collapse justify-content-end">
-			
+				<!-- <form action="/index" method="post"> </form>-->
 				<a class="btn-nav nav-item nav-link" th:href="@{index}" style="color: white;"> <i class="fas fa-home"> </i> Home </a> 
+				
 				<a class="btn-nav nav-item nav-link" style="color: white;" th:href="@{inserirAlunos}"> <i class="fas fa-user-graduate"></i> Cadastrar Aluno</a>
 				<a class="btn-nav nav-item nav-link" style="color: white;" th:href="@{filtro-alunos}"> <i class="fas fa-search"></i> Filtrar Alunos </a>
-				<a data-toggle="modal" style="color: white;" data-target="#modalPesquisa" class="btn-nav nav-item nav-link" th:href="@{pesquisar-aluno-2}"> <i class="fas fa-search"> </i> Pesquisar Aluno</a> 
+				<a class="btn-nav nav-item nav-link" style="color: white;"> <i class="fas fa-search"></i> ------------------ </a>
 				<form action="/logout" method="post">
 				<button type="submit" class="nav-item nav-link btn-danger"> <i class="fas fa-times"></i> Sair</button>
 				</form>
