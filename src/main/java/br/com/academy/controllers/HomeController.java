@@ -9,7 +9,7 @@ import br.com.academy.model.Aluno;
 @Controller
 public class HomeController {
 
-	@GetMapping("/")
+	@GetMapping("/index")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/home/index");

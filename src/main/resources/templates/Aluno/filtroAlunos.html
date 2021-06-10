@@ -23,8 +23,8 @@
 		<br>
 		<form method="post" action="aluno-filtrado" th:object="${aluno}">
 			<div class="input-group col-6 offset-3">
-						<input class="form-control" type="text" placeholder="Digite o nome do aluno" th:field="*{name}">
-						<!--   -->
+						<input class="form-control" type="text" placeholder="Digite o nome do aluno">
+						<!--   th:field="*{nome}" -->
 				<div class="input-group-append">
 					<button type="submit" class="btn btn-primary"
 						style="width: 120px; height: 50px; margin-bottom: 25px;">Pesquisar</button>

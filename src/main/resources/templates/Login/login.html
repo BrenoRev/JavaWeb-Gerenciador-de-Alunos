@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/login.css">
+<title>Project Academy - Login</title>
+<meta name="Author" content="Breno Silva" />
+<script src="https://kit.fontawesome.com/006642858d.js"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap"
+	rel="stylesheet">
+
+</head>
+<body>
+<div class="Login-Form">
+	
+	<div class="container">
+	<div class="main-div">
+	<div class="texto-header">
+	<h2>Admin Login</h2>
+	<p>Insira suas credenciais para efetuar o login no sistema.</p>	
+	</div>
+	<form method="post">
+	<div class="form-group">
+	<input type="text" class="form-control" placeholder="Username">
+	 </div>
+	
+	<div class="form-group">
+	<input type="password" class="form-control" placeholder="Password">
+	</div>
+	
+	<div class="cadastro">
+	<a th:href="@{cadastro}"> Não tem cadastro? clique aqui.</a>
+	</div>
+	<button class="btn btn-primary">Login</button>
+	<button class="btn btn-info">Voltar</button>
+	 
+	</form>
+	</div>
+	</div>
+</div>
+</body>
+</html>

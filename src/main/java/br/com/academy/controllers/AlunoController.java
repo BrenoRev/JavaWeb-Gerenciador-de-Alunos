@@ -124,13 +124,13 @@ public class AlunoController {
 	}
 	
 	@PostMapping("aluno-filtrado")
-	public ModelAndView pesquisarAlunoFiltro(@RequestParam(required = false) String name) {
+	public ModelAndView pesquisarAlunoFiltro(@RequestParam(required = false) String nome) {
 		ModelAndView mv = new ModelAndView();
 		List<Aluno> listaAlunos;
-		if(name == null || name.trim().isEmpty()) {
+		if(nome == null || nome.trim().isEmpty()) {
 			listaAlunos = alunoRepositorio.findAll();
 		}else {
-			listaAlunos = alunoRepositorio.findByNomeContainingIgnoreCase(name);
+			listaAlunos = alunoRepositorio.findByNomeContainingIgnoreCase(nome);
 		}
 		mv.addObject("ListaDeAlunosFiltrados", listaAlunos);
 		mv.setViewName("Aluno/pesquisa-resultado-Filtrados");
