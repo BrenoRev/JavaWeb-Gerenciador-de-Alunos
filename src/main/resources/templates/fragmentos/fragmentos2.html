@@ -24,18 +24,17 @@
 			<img src="/img/logo_header-site.png" width="200px" />
 			</a>
 
-			<button class="navbar-toggler" type="button" data-ttogle="collapse"
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navMobile">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div id="navMobile" class="navbar-collapse collapse justify-content-end">
 				<!-- <form action="/index" method="post"> </form>-->
-				<a class="btn-nav nav-item nav-link" th:href="@{index}" style="color: white;"> <i class="fas fa-home"> </i> Home </a> 
-				
-				<a class="btn-nav nav-item nav-link" style="color: white;" th:href="@{inserirAlunos}"> <i class="fas fa-user-graduate"></i> Cadastrar Aluno</a>
-				<a class="btn-nav nav-item nav-link" style="color: white;" th:href="@{filtro-alunos}"> <i class="fas fa-search"></i> Filtrar Alunos </a>
-				<a class="btn-nav nav-item nav-link" style="color: white;"> <i class="fas fa-search"></i> ------------------ </a>
+				<a class="btn-nav nav-item nav-link" th:href="@{index}" style="color: rgb(128, 128, 128);"> <i class="fas fa-home"> </i> Home </a> 
+				<a class="btn-nav nav-item nav-link" style="color: rgb(128, 128, 128);" th:href="@{inserirAlunos}"> <i class="fas fa-user-graduate"></i> Cadastrar Aluno</a>
+				<a class="btn-nav nav-item nav-link" style="color: rgb(128, 128, 128);" th:href="@{filtro-alunos}"> <i class="fas fa-search"></i> Filtrar Alunos </a>
+				<a class="btn-nav nav-item nav-link" style="color: rgb(128, 128, 128);"> <i class="fas fa-search"></i> ------------------ </a>
 				<form action="/logout" method="post">
 				<button type="submit" class="nav-item nav-link btn-danger"> <i class="fas fa-times"></i> Sair</button>
 				</form>

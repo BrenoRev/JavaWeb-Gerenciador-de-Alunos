@@ -39,7 +39,7 @@
 				<label class="validation-message" th:errors="*{curso}"></label>
 				</div>
 					<label>Selecione o curso: </label>
-					 <select class="form-control" th:field="*{curso}">
+					 <select class="form-control" style="z-index: -1" th:field="*{curso}">
 						<option
 							th:each="curso : ${T(br.com.academy.Enums.Curso).values()}"
 							th:value="${curso}" th:text="${curso}"></option>

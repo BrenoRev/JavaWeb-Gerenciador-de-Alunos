@@ -23,6 +23,8 @@
 	<h2>Cadastro de Usuário</h2>
 	<p>Crie seu usuário no sistema.</p>	
 	</div>
+	
+	
 	<form method="post" th:object="${usuario}" action="salvarUsuario">
 	
 	<div class="form-group">
@@ -38,9 +40,12 @@
 	 </div>
 	 
 	<button class="btn btn-primary">Cadastrar</button>
-	<button class="btn btn-info">Voltar</button>
+	
 	 
 	</form>
+	<div >
+	<form><a type="submit" class="btn btn-primary" th:href="@{/}" style="margin-top: 3%; background: #FF0000; height: 40px;">Voltar</a></form>
+	</div>
 	</div>
 	</div>
 </div>

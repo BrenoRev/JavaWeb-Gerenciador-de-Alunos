@@ -16,12 +16,6 @@
 </head>
 <body>
 
-<div style="margin:0; text-align: center;" class="alert alert-success" role="alert">
-  <h4 class="alert-heading">Seja Bem Vindo!</h4>
-  <p>Espero que utilize a nossa plataforma com seguranca e responsabilidade.</p>
-  <hr>
-  <p class="mb-0">Software criado para escolas.</p>
-</div>
 
 	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 
@@ -63,7 +57,8 @@
 				</div>
 				<form method="post" action="pesquisar-aluno" th:object="${aluno}">
 					<div class="modal-body">
-						<input class="form-control" type="text" placeholder="Digite o nome do aluno" th:field="*{nome}" >
+						<input class="form-control" type="text" placeholder="Digite o nome do aluno" >
+						<!--  th:field="*{nome} -->
 					</div>
 					<div class="modal-footer">
 						<button class="btn btn-danger" data-dismiss="modal">Fechar</button>
@@ -73,7 +68,7 @@
 			</div>
 		</div>
 	</div>
-	
+		
 	<div th:replace="fragmentos/fragmentos :: rodape"></div>
 	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

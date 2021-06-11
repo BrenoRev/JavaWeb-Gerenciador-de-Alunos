@@ -38,15 +38,16 @@ public class UsuarioController {
 	@GetMapping("/index")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/home/index");
-		mv.addObject("aluno", new Aluno());
+		mv.setViewName("Login/index");
+		//mv.addObject("aluno", new Aluno());
 		return mv;
 	}
+	
 	@GetMapping("/indexlog")
 	public ModelAndView indexlog() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/home/log");
-		mv.addObject("aluno", new Aluno());
+		mv.setViewName("Login/log");
+		//mv.addObject("aluno", new Aluno());
 		return mv;
 	}
 	
@@ -61,30 +62,36 @@ public class UsuarioController {
 	@PostMapping("salvarUsuario")
 	public ModelAndView cadastrar(Usuario usuario) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		serviceUsuario.salvarUsuario(usuario);
+		//serviceUsuario.salvarUsuario(usuario);
 		mv.setViewName("redirect:/");
 		return mv;
 	}
 	
 	@PostMapping("/login")
+	public ModelAndView logou() {
+		return indexlog();
+		}
+	/*
 	public ModelAndView login(@Valid Usuario usuario, BindingResult br, HttpSession session) throws NoSuchAlgorithmException, ServiceExc {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("usuario", new Usuario());
 		if(br.hasErrors()) {
 			mv.setViewName("Login/login");
 		}
-		// Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
+		 Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
 		Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), usuario.getSenha());
 		/*if(userLogin == null) {
 			mv.addObject("msg", "Usuário não encontrado. Tente novamente!");
 		}else {
 			session.setAttribute("usuarioLogado", userLogin);
 			return index();
-		}*/
+		}
 		mv.addObject("nome", usuario.getUser());
 		session.setAttribute("usuarioLogado", userLogin);
 		return indexlog();
-	}
+		*/
+	
+	
 	
 	@PostMapping("/logout")
 	public ModelAndView logout(HttpSession session) {
