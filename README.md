@@ -1,10 +1,11 @@
-# JavaWeb-Gerenciador-de-Alunos
-# Java, Hibernate, CSS, HTML, JPA, Bootstrap e Spring Boot/MVC.
+# GERENCIADOR DE ALUNOS PARA ESCOLA
+<h3>Java, Hibernate, CSS, HTML, JPA, Bootstrap e Spring Boot/MVC.</h3>
 
-# LINK AND DEMONSTRATION
-https://students-project-manager.herokuapp.com/
 #
-https://www.youtube.com/watch?v=mvQXdRrX_ks
+# LINK AND DEMONSTRATION
+<h3>https://students-project-manager.herokuapp.com/
+
+<h3>https://www.youtube.com/watch?v=mvQXdRrX_ks
 
 #
 # <p align="center">LOGIN</p>
