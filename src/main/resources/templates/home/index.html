@@ -55,9 +55,9 @@
 						<span>&times;</span>
 					</button>
 				</div>
-				<form method="post" action="pesquisar-aluno" th:object="${aluno}">
+				<form method="post" action="pesquisar-aluno">
 					<div class="modal-body">
-						<input class="form-control" type="text" placeholder="Digite o nome do aluno" th:field="*{nome}" >
+						<input class="form-control" type="text" placeholder="Digite o nome do aluno" name="nome" >
 					</div>
 					<div class="modal-footer">
 						<button class="btn btn-danger" data-dismiss="modal">Fechar</button>

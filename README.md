@@ -15,8 +15,6 @@
         
 <h3>Link e Demonstração por Vídeo </h3>
 
-<h4>https://students-project-manager.herokuapp.com/</h4>
-
 <h4>https://www.youtube.com/watch?v=mvQXdRrX_ks</h4>
 
  <br>

@@ -33,3 +33,7 @@ a.btn-nav:hover{color: #BA68C8;}
 	.nav{height: 100%;}
 	.neo-container{margin-top: 10px;}
 }
+
+.header-icon:hover {
+    color: white !important;
+}

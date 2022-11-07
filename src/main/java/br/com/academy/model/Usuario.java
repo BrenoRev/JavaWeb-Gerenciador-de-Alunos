@@ -17,12 +17,16 @@ public class Usuario {
 	@Id
 	@GeneratedValue(generator = "increment")
 	@GenericGenerator(name = "increment", strategy ="increment")
-	@Column(name ="id")
 	private Long id;
 	@Email
+	@Column(name ="email")
 	private String email;
+
+	@Column(name="username")
 	@Size(min=3, max = 20, message = "Usuário deve conter entre 3 a 20 caracteres")
 	private String user;
+
+	@Column(name="senha")
 	private String senha;
 	
 	

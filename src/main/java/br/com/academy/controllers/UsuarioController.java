@@ -31,6 +31,8 @@ public class UsuarioController {
 	@GetMapping("/")
 	public ModelAndView login() {
 		ModelAndView mv = new ModelAndView();
+		mv.addObject(new Usuario());
+		mv.addObject(new Aluno());
 		mv.setViewName("Login/login");
 		return mv;
 	}
@@ -39,7 +41,7 @@ public class UsuarioController {
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Login/index");
-		//mv.addObject("aluno", new Aluno());
+		mv.addObject("aluno", new Aluno());
 		return mv;
 	}
 	
@@ -47,7 +49,7 @@ public class UsuarioController {
 	public ModelAndView indexlog() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("Login/log");
-		//mv.addObject("aluno", new Aluno());
+		mv.addObject("aluno", new Aluno());
 		return mv;
 	}
 	
@@ -62,34 +64,31 @@ public class UsuarioController {
 	@PostMapping("salvarUsuario")
 	public ModelAndView cadastrar(Usuario usuario) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		//serviceUsuario.salvarUsuario(usuario);
+		serviceUsuario.salvarUsuario(usuario);
 		mv.setViewName("redirect:/");
 		return mv;
 	}
-	
+
 	@PostMapping("/login")
-	public ModelAndView logou() {
-		return indexlog();
-		}
-	/*
-	public ModelAndView login(@Valid Usuario usuario, BindingResult br, HttpSession session) throws NoSuchAlgorithmException, ServiceExc {
+	public ModelAndView login(@Valid Usuario usuario,
+							  BindingResult br,
+							  HttpSession session) throws NoSuchAlgorithmException, ServiceExc {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("usuario", new Usuario());
-		if(br.hasErrors()) {
+		if (br.hasErrors()) {
 			mv.setViewName("Login/login");
 		}
-		 Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
-		Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), usuario.getSenha());
-		/*if(userLogin == null) {
-			mv.addObject("msg", "Usuário não encontrado. Tente novamente!");
-		}else {
+		Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
+		if (userLogin != null) {
 			session.setAttribute("usuarioLogado", userLogin);
+			mv.addObject("nome", usuario.getUser());
 			return index();
+		} else {
+			mv.addObject("msg", "Usuário não encontrado. Tente novamente!");
+			mv.setViewName("Login/login");
+			return mv;
 		}
-		mv.addObject("nome", usuario.getUser());
-		session.setAttribute("usuarioLogado", userLogin);
-		return indexlog();
-		*/
+	}
 	
 	
 	
